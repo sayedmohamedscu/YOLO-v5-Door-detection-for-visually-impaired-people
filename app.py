@@ -33,7 +33,7 @@ classes = None
 #frame = cv2.imread('1.jpg')
 # Give the weight files to the model and load the network using       them.
 
-roi_detection_modelWeights = "/content/best (1).onnx"
+roi_detection_modelWeights = "doors.onnx"
 roi_detection_model = cv2.dnn.readNet(roi_detection_modelWeights)
 roi_detection_model.setPreferableBackend(cv2.dnn.DNN_BACKEND_DEFAULT)
 roi_detection_model.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
@@ -207,7 +207,7 @@ inputs = gr.Image(type="filepath", label="Input Image")
 outputs = [gr.Image(type="filepath", label="Output Image"),gr.Textbox()]
 title = "YOLO-v5-Door detection for visually impaired people"
 
-demo_app = gr.Interface(examples=["/content/s.jpg"],
+demo_app = gr.Interface(examples=["s.jpg"],
     fn=greet,
     inputs=inputs,
     outputs=outputs,
